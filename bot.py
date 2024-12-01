@@ -49,12 +49,12 @@ class Bot(Client):
         logging.info(LOG_STR)
         logging.info(script.LOGO)
 
-        # Notify admins about bot restart
-        for admin_id in ADMINS:
-            try:
-                await self.send_message(chat_id=admin_id, text="<b>✅ ʙᴏᴛ ʀᴇsᴛᴀʀᴛᴇᴅ</b>", parse_mode="HTML")
-            except Exception as e:
-                logging.error(f"Failed to send restart message to admin {admin_id}: {e}")
+      # Notify admins about bot restart
+for admin_id in ADMINS:
+    try:
+        await self.send_message(chat_id=admin_id, text="✅ Bot restarted")
+    except Exception as e:
+        logging.error(f"Failed to send restart message to admin {admin_id}: {e}")
 
         tz = pytz.timezone('Asia/Kolkata')
         today = date.today()
